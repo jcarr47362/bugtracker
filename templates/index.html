@@ -1,0 +1,33 @@
+<h1>Bug Tracker!</h1>
+
+<a href="/addticket/"><button type="button">Submit a Ticket</button></a>
+
+<a href="/logout/"><button type="button">Logout</button></a>
+
+
+<h2>New</h2>
+{% for ticket in my_tickets %}
+    {% if ticket.ticket_status == "N" %}
+    <h3>Title: {{ ticket.title }}</h3>
+    <h4>Description: {{ ticket.description }}</h4>
+    <h4>User Assigned: {{ ticket.user_assigned_to_ticket }}</h4>
+    <br>
+{% endif %}
+{% endfor %}
+<br>
+<h2> In Progress </h2>
+{% for ticket in my_tickets %}
+    {% if ticket.ticket_status == "IP" %}
+    <h3>Title: {{ ticket.title }}</h3>
+    <h4>Description: {{ ticket.description }}</h4>
+    <h4>User Assigned: {{ ticket.user_assigned_to_ticket }}</h4>
+    <br>
+{% endif %}
+{% endfor %}
+<br>
+<h2>Done</h2>
+<br>
+<h2>Invalid</h2>
+
+
+
